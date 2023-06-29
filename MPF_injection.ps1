@@ -15,6 +15,7 @@ function FindFiles {
         $inputPath += $browse.SelectedPath
 
         # gets the child elements from the folder selected if suffix is correct
+        # *.MPF is the file ending the script will search, you may change that. 
         $MPFfiles = Get-ChildItem -Path $inputPath -include *.MPF -Depth(1) #-Recurse
 
         #Setup for Progressbar
@@ -32,7 +33,7 @@ function FindFiles {
             #------------------------------------------------------------------------
 
             $fileNameNOextensions = [System.IO.Path]::GetFileNameWithoutExtension($singleFile)
-            $header = '%_N_' + $fileNameNOextensions + '_MPF'
+            $header = '%_N_' + $fileNameNOextensions + '_MPF' # what needs to be added
             
             @($header) + (Get-Content $singleFile) | Set-Content $singleFile
 
