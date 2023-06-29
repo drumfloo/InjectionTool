@@ -1,4 +1,4 @@
-# MPFinjectionTool
+# InjectionTool
 
 I´m new to PS and also to coding. I did this back when i first startet.
 
